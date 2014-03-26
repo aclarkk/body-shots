@@ -1,5 +1,7 @@
+var casper = require('casper').create();
+
 //starting url
-var url ='http://dribbble.com';
+var url = casper.cli.args[0];
 
 //path to local save folder
 var savePath='screengrabs/';
@@ -16,13 +18,12 @@ viewportSizes=[
   [320, 700]
 ]
 
-var casper = require('casper').create();
 
 casper.start();
 
 casper.each(viewportSizes, function(self, viewportSize, i){
   var width = viewportSize[0],
-      height = viewportSize[1];
+  height = viewportSize[1];
 
   casper.wait(delay, function() {
 
