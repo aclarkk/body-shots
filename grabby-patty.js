@@ -6,10 +6,10 @@ var savePath='screengrabs/';
 
 var date = new Date();
 
+// Set a delay to account for page load animations
 var delay = 100;
 
-var selector
-
+// Add your sizes here
 viewportSizes=[
   [1650, 1080],
   [720, 1024],
@@ -19,6 +19,7 @@ viewportSizes=[
 var casper = require('casper').create();
 
 casper.start();
+
 casper.each(viewportSizes, function(self, viewportSize, i){
   var width = viewportSize[0],
       height = viewportSize[1];
